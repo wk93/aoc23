@@ -2,5 +2,5 @@ mod day1;
 
 fn main() {
     println!("Hello, world!");
-    day1::puzzle1();
+    day1::puzzle2();
 }
