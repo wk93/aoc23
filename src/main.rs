@@ -7,5 +7,6 @@ mod day6;
 
 fn main() {
     println!("Hello, world!");
-    day6::puzzle1();
+    //    day6::puzzle1();
+    day6::puzzle2();
 }
