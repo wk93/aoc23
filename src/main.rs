@@ -10,5 +10,5 @@ mod day9;
 
 fn main() {
     println!("Hello, world!");
-    day9::puzzle1();
+    day9::puzzle2();
 }

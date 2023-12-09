@@ -1,3 +1,34 @@
+pub fn puzzle2() {
+    let lines = parse_input(get_input(false));
+    let mut prev_sum = 0;
+
+    for line in lines {
+        let mut v: Vec<i32> = line.clone();
+        let mut firsts: Vec<i32> = vec![v.first().unwrap().to_owned()];
+        while v.iter().any(|x| x != &0) {
+            let mut vec_new: Vec<i32> = Vec::new();
+            let mut i = 0;
+            while i < v.len() - 1 {
+                vec_new.push(v[i + 1] - v[i]);
+                i += 1;
+            }
+            v = vec_new;
+            firsts.push(v.first().unwrap().to_owned());
+        }
+
+        let mut prev = 0;
+        firsts.reverse();
+
+        for first in firsts.iter() {
+            prev = first.to_owned() - prev;
+        }
+
+        prev_sum += prev;
+    }
+
+    println!("{}", prev_sum)
+}
+
 pub fn puzzle1() {
     let lines = parse_input(get_input(false));
     let mut next_sum = 0;
